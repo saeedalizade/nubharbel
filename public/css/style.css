@@ -707,14 +707,14 @@
 
 /*slider area css here*/
 .single_slider.slider_one {
-	background: url(../img/slider/slider1.jpg);
+	/*background: url(../img/slider/slider1.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
 	background-size: cover;
 }
 .single_slider.slider_two {
-	background: url(../img/slider/slider2.jpg);
+	/*background: url(../img/slider/slider2.jpg);*/
     background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
@@ -2578,7 +2578,7 @@
     background: #242424;
 }
 .slider_three .single_slider.slider_one {
-	background: url(../img/slider/slider5.jpg);
+	/*background: url(../img/slider/slider5.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
@@ -2589,7 +2589,7 @@
 	height: 550px;
 }
 .slider_three .single_slider.slider_two {
-	background: url(../img/slider/slider6.jpg);
+	/*background: url(../img/slider/slider6.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
@@ -2891,14 +2891,14 @@
 }
 
 .slider_four_area .single_slider.slider_one {
-	background: url(../img/slider/slider8.jpg);
+	/*background: url(../img/slider/slider8.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;
 	background-size: cover;
 }
 .slider_four_area .single_slider.slider_two {
-	background: url(../img/slider/slider7.jpg);
+	/*background: url(../img/slider/slider7.jpg);*/
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center center;

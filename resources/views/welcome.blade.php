@@ -6,6 +6,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12">
+                        <img src="{{ asset('img/slider/slider5.jpg') }}">
                         <div class="slider_content">
                             <h1>
                                 bentwood armchair
@@ -20,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="single_slider slider_two">
+        <div class="single_slider slider_two" style="background :url('{{asset('img/slider/slider6.jpg')}}');">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12">
