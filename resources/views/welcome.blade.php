@@ -6,53 +6,26 @@
 
     <section class="fullscreen-banner p-0 o-hidden">
         <div id="slider" class="sl-slider-wrapper">
+            @foreach($data['slider'] as $key=>$slider)
             <div class="sl-slider">
-                <div class="sl-slide sl-trans-elems" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-                    <div class="sl-slide-inner" data-bg-img="{{asset('img/bg/01.jpg')}}">
+                <div class="sl-slide sl-trans-elems" data-orientation="horizontal" data-slice1-rotation="-25 +{{ ($key+1)*10 }}" data-slice2-rotation="{{ -25+($key+1)*10 }}" data-slice1-scale="{{2+$key}}" data-slice2-scale="{{2+$key}}">
+                    <div class="sl-slide-inner" data-bg-img="{{asset('img/slider/'.$slider['img'])}}">
                         <div class="align-center">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-8 col-md-12">
-                                        <h5 class="slider-label wow fadeInUp mb-2" data-wow-duration="0.7s">Save Up To 30% Hurry Up</h5>
-                                        <h1 class="mb-4 wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="2s">New <i>Arrival</i> <span class="text-black">Fashion</span></h1>
-                                        <a class="btn btn-theme btn-iconic animated5" href="#"><span>Shop Now <i class="fas fa-shopping-cart"></i></span></a>
+                                        <h5 class="slider-label wow fadeInUp mb-2" data-wow-duration="0.7s">{{ $slider['title'] }}</h5>
+                                        <h1 class="mb-4 wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="2s">{{ $slider['description'] }}</h1>
+                                        <a class="btn btn-theme btn-iconic animated5" href="#"><span>خرید <i class="fas fa-shopping-cart"></i></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-                    <div class="sl-slide-inner" data-bg-img="{{asset('img/bg/02.jpg')}}">
-                        <div class="align-center">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-12">
-                                        <h5 class="wow fadeInUp mb-2" data-wow-duration="0.7s" data-wow-delay="2s">Best Offer Of The Month</h5>
-                                        <h1 class="mb-4 wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">New <span class="text-white font-italic">Women's</span> <span class="text-black">Fashion</span> Trends</h1>
-                                        <a class="btn btn-theme btn-iconic animated5" href="#"><span>Shop Now <i class="fas fa-shopping-cart"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-                    <div class="sl-slide-inner" data-bg-img="{{asset('img/bg/05.jpg')}}" style="background-position: left;">
-                        <div class="align-center">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-8 col-md-12 mr-auto text-left">
-                                        <h5 class="wow fadeInUp mb-2" data-wow-duration="0.7s" data-wow-delay="2s">Get Product New Season</h5>
-                                        <h1 class="mb-4 text-black wow fadeInUp" data-wow-duration="0.9s" data-wow-delay="3s">Upto 70% Off on <span class="text-theme">Fashion</span></h1>
-                                        <a class="btn btn-theme btn-iconic animated5" href="#"><span>Shop Now <i class="fas fa-shopping-cart"></i></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+            @endforeach
             <!-- /sl-slider -->
             <nav id="nav-arrows" class="nav-arrows"> <span class="nav-arrow-prev">Previous</span>
                 <span class="nav-arrow-next">Next</span>
@@ -72,7 +45,7 @@
     <!--body content start-->
 
     <div class="page-content">
-        <div class="insideText">OveltyShop</div>
+        <div class="insideText">گلاب سرا</div>
         <!--product add start-->
 
         <section>

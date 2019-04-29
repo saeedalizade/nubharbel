@@ -7,10 +7,10 @@
     <meta name="description" content="HTML5 Template" />
     <meta name="author" content="www.themeht.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <title>Oveltyshop - ECommerce Responsive HTML5 Template</title>
+    <title>گلاب و عرقیات گلاب سرا کاشان</title>
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" />
 
     <!-- inject css start -->
 
@@ -47,9 +47,9 @@
                     <div class="col-lg-6 col-md-4">
                         <div class="topbar-link">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><span>Email</span><a href="mailto:htinfotech7@gmail.com">htinfotech7@gmail.com</a>
+                                <li class="list-inline-item"><span>ایمیل</span><a href="mailto:golabsara@gmail.com">golabsara@gmail.com</a>
                                 </li>
-                                <li class="list-inline-item"><span>Call Us</span><a href="tel:+912345678900">+91-234-567-8900</a>
+                                <li class="list-inline-item"><span>تماس با ما</span><a href="tel:+989211786491">+989211786491</a>
                                 </li>
                             </ul>
                         </div>
@@ -58,7 +58,7 @@
                         <div class="topbar-right">
                             <ul class="topbar-menu">
                                 <!-- Currency / Language / My Account -->
-                                <li class="currency">
+                     {{--           <li class="currency">
                                     <div class="currency-selection">
                                         <select>
                                             <option value="1" />Usd
@@ -67,8 +67,8 @@
                                             <option value="4" />eur
                                         </select>
                                     </div>
-                                </li>
-                                <li class="language">
+                                </li>--}}
+                   {{--             <li class="language">
                                     <div class="language-selection">
                                         <select>
                                             <option value="1" />English
@@ -77,9 +77,9 @@
                                             <option value="4" />German
                                         </select>
                                     </div>
-                                </li>
-                                <li><a href="./login.html">Sign In</a></li>
-                                <li><a href="./register.html">Register</a></li>
+                                </li>--}}
+                                <li><a href="./login.html">ورود</a></li>
+                                <li><a href="./register.html">ثبت نام</a></li>
                             </ul>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand logo" href="./index.html">
+                            <a class="navbar-brand logo" href="{{ route('home') }}">
                                 <img id="logo-img" class="img-center" src="{{asset('img/logo.png')}}" alt="" />
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span></span>
@@ -101,26 +101,26 @@
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <!-- Left nav -->
                                 <ul class="nav navbar-nav ml-auto mr-auto">
-                                    <li class="nav-item active dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Home</span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="./index.html">Home 1</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./index-2.html">Home 2</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./index-3.html">Home 3</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./index-4.html">Home 4</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./index-sidemenu.html">Home 5</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./index-furniture.html">Home 6</a>
-                                            </li>
-                                        </ul>
+                                    <li class="nav-item active"> <a class="nav-link" href="{{ route('home') }}"><span class="menu-label">صفحه اصلی</span></a>
+                                        {{--<ul class="dropdown-menu">--}}
+                                            {{--<li><a class="dropdown-item" href="./index.html">Home 1</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a class="dropdown-item" href="./index-2.html">Home 2</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a class="dropdown-item" href="./index-3.html">Home 3</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a class="dropdown-item" href="./index-4.html">Home 4</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a class="dropdown-item" href="./index-sidemenu.html">Home 5</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a class="dropdown-item" href="./index-furniture.html">Home 6</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">Pages</span>
+                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">بلاگ</span>
                                         </a>
-                                        <ul class="dropdown-menu">
+                                        {{--<ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="./product-wishlist.html">Wishlist</a>
                                             </li>
                                             <li><a class="dropdown-item" href="./checkout.html">Checkout</a>
@@ -133,10 +133,10 @@
                                             </li>
                                             <li><a class="dropdown-item" href="./error-404.html">404</a>
                                             </li>
-                                        </ul>
+                                        </ul>--}}
                                     </li>
                                     <li class="nav-item dropdown fullwidth">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">Categories</span>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">محصولات</span>
                                         </a>
                                         <ul class="dropdown-menu grid-12">
                                             <li class="container">
@@ -193,8 +193,8 @@
                                             <!--  /.container  -->
                                         </ul>
                                     </li>
-                                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Shop</span></a>
-                                        <ul class="dropdown-menu">
+                                    <li class="nav-item dropdown"> <a class="nav-link " href="#"><span class="menu-label">تماس با ما</span></a>
+                                        {{--<ul class="dropdown-menu">
                                             <li class="dropdown"> <a class="dropdown-item dropdown-toggle" href="#">Product</a>
                                                 <ul class="dropdown-menu">
                                                     <li><a class="dropdown-item" href="./product-left-sidebar.html">Left Sidebar</a>
@@ -227,10 +227,10 @@
                                             </li>
                                             <li> <a class="dropdown-item" href="./product-cart.html">Product Cart</a>
                                             </li>
-                                        </ul>
+                                        </ul>--}}
                                     </li>
-                                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Blog</span></a>
-                                        <ul class="dropdown-menu">
+                                    {{-- <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Blog</span></a>
+                                       <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="./blog.html">Blog</a>
                                             </li>
                                             <li><a class="dropdown-item" href="./blog-masonry.html">Blog masonry</a>
@@ -238,14 +238,14 @@
                                             <li><a class="dropdown-item" href="./blog-single.html">Blog Single</a>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Contact Us</span></a>
-                                        <ul class="dropdown-menu">
+                                    </li>--}}
+                                    <li class="nav-item dropdown"> <a class="nav-link " href="#"><span class="menu-label">در باره ما</span></a>
+                                       {{-- <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="./contact-1.html">Contact 1</a>
                                             </li>
                                             <li><a class="dropdown-item" href="./contact-2.html">Contact 2</a>
                                             </li>
-                                        </ul>
+                                        </ul>--}}
                                     </li>
                                 </ul>
                             </div>
