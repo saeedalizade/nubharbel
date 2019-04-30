@@ -93,6 +93,22 @@
                         @endif
                     </div>
 
+                    <div class="form-group {{ $errors->has('is_special') ? ' has-error' : '' }}">
+                        <label for="is_special">محصول ویژه می باشد؟ </label>
+                        <select name="is_special" id="category_id" class="form-control form-control-line select2">
+                            <option value="">انتخاب کنید...</option>
+
+                            <option value="1" {{ $Product['is_special'] =='1' ? 'selected' : ''  }}>بله</option>
+                            <option value="0" {{ $Product['is_special'] =='0' ? 'selected' : ''  }}>خیر</option>
+
+                        </select>
+                        @if ($errors->has('is_special'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('is_special') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+
                     <div class="row {{ $errors->has('img') ? ' has-error' : '' }}">
                         <div class="col-lg-12 col-md-12">
                             <div class="card">
