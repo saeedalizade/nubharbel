@@ -164,6 +164,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
 
 
         /*
@@ -229,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

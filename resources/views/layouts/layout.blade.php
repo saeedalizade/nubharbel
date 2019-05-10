@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="HTML5 Template" />
-    <meta name="author" content="www.themeht.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="keywords" content="HTML5 Template"/>
+    <meta name="description" content="HTML5 Template"/>
+    <meta name="author" content="www.themeht.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <title>گلاب و عرقیات گلاب سرا کاشان</title>
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}"/>
 
     <!-- inject css start -->
 
     <!--== bootstrap -->
-    <link href="{{ mix ('css/all.css') }}" rel="stylesheet" type="text/css" />
-
+    <link href="{{ mix ('css/all.css') }}" rel="stylesheet" type="text/css"/>
 
 
     <!-- inject css end -->
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
 
 <body>
 
@@ -32,7 +32,7 @@
     <!-- preloader start -->
 
     <div id="ht-preloader">
-        <div class="loader clear-loader"><img src="{{asset('img/loader.gif')}}" alt="" class="loader-img"  /></div>
+        <div class="loader clear-loader"><img src="{{asset('img/loader.gif')}}" alt="" class="loader-img"/></div>
     </div>
 
     <!-- preloader end -->
@@ -58,26 +58,26 @@
                         <div class="topbar-right">
                             <ul class="topbar-menu">
                                 <!-- Currency / Language / My Account -->
-                     {{--           <li class="currency">
-                                    <div class="currency-selection">
-                                        <select>
-                                            <option value="1" />Usd
-                                            <option value="2" />cad
-                                            <option value="3" />aud
-                                            <option value="4" />eur
-                                        </select>
-                                    </div>
-                                </li>--}}
-                   {{--             <li class="language">
-                                    <div class="language-selection">
-                                        <select>
-                                            <option value="1" />English
-                                            <option value="2" />French
-                                            <option value="3" />Italian
-                                            <option value="4" />German
-                                        </select>
-                                    </div>
-                                </li>--}}
+                                {{--           <li class="currency">
+                                               <div class="currency-selection">
+                                                   <select>
+                                                       <option value="1" />Usd
+                                                       <option value="2" />cad
+                                                       <option value="3" />aud
+                                                       <option value="4" />eur
+                                                   </select>
+                                               </div>
+                                           </li>--}}
+                                {{--             <li class="language">
+                                                 <div class="language-selection">
+                                                     <select>
+                                                         <option value="1" />English
+                                                         <option value="2" />French
+                                                         <option value="3" />Italian
+                                                         <option value="4" />German
+                                                     </select>
+                                                 </div>
+                                             </li>--}}
                                 <li><a href="./login.html">ورود</a></li>
                                 <li><a href="./register.html">ثبت نام</a></li>
                             </ul>
@@ -92,33 +92,38 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand logo" href="{{ route('home') }}">
-                                <img id="logo-img" class="img-center" src="{{asset('img/logo.png')}}" alt="" />
+                                <img id="logo-img" class="img-center" src="{{asset('img/logo.png')}}" alt=""/>
                             </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span></span>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarNavDropdown" aria-expanded="false"
+                                    aria-label="Toggle navigation"><span></span>
                                 <span></span>
                                 <span></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <!-- Left nav -->
                                 <ul class="nav navbar-nav ml-auto mr-auto">
-                                    <li class="nav-item active"> <a class="nav-link" href="{{ route('home') }}"><span class="menu-label">صفحه اصلی</span></a>
+                                    <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}"><span
+                                                    class="menu-label">صفحه اصلی</span></a>
                                         {{--<ul class="dropdown-menu">--}}
-                                            {{--<li><a class="dropdown-item" href="./index.html">Home 1</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li><a class="dropdown-item" href="./index-2.html">Home 2</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li><a class="dropdown-item" href="./index-3.html">Home 3</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li><a class="dropdown-item" href="./index-4.html">Home 4</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li><a class="dropdown-item" href="./index-sidemenu.html">Home 5</a>--}}
-                                            {{--</li>--}}
-                                            {{--<li><a class="dropdown-item" href="./index-furniture.html">Home 6</a>--}}
-                                            {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index.html">Home 1</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index-2.html">Home 2</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index-3.html">Home 3</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index-4.html">Home 4</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index-sidemenu.html">Home 5</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li><a class="dropdown-item" href="./index-furniture.html">Home 6</a>--}}
+                                        {{--</li>--}}
                                         {{--</ul>--}}
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">بلاگ</span>
+                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false"> <span
+                                                    class="menu-label">بلاگ</span>
                                         </a>
                                         {{--<ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="./product-wishlist.html">Wishlist</a>
@@ -135,8 +140,32 @@
                                             </li>
                                         </ul>--}}
                                     </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false"> <span
+                                                    class="menu-label">اخبار</span>
+                                        </a>
+                                        {{--<ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./product-wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="./checkout.html">Checkout</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="./order-complete.html">Order Complete</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="./login.html">Login</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="./register.html">Register</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="./error-404.html">404</a>
+                                            </li>
+                                        </ul>--}}
+                                    </li>
+
                                     <li class="nav-item dropdown fullwidth">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="menu-label">محصولات</span>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
+                                                    class="menu-label">محصولات</span>
                                         </a>
                                         <ul class="dropdown-menu grid-12">
                                             <li class="container">
@@ -144,15 +173,20 @@
                                                     <div class="col-md-4">
                                                         <ul class="nav flex-column">
                                                             <li class="menu-title">Women's Collection</li>
-                                                            <li><a class="dropdown-item" href="./product.html">Dresses</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Dresses</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Blouses</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Blouses</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Shirts</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">T-shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">T-shirts</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Bras &amp; Panties</a>
+                                                            <li><a class="dropdown-item" href="./product.html">Bras
+                                                                    &amp; Panties</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -160,15 +194,19 @@
                                                     <div class="col-md-4">
                                                         <ul class="nav flex-column">
                                                             <li class="menu-title">Men's Collection</li>
-                                                            <li><a class="dropdown-item" href="./product.html">T-Shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">T-Shirts</a>
                                                             </li>
                                                             <li><a class="dropdown-item" href="./product.html">Jeans</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Shirts</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Jackets</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Jackets</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Trench</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Trench</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -176,13 +214,17 @@
                                                     <div class="col-md-4">
                                                         <ul class="nav flex-column">
                                                             <li class="menu-title">Kids's Collection</li>
-                                                            <li><a class="dropdown-item" href="./product.html">Dresses</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Dresses</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Shirts</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">T-shirts</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">T-shirts</a>
                                                             </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Jackets</a>
+                                                            <li><a class="dropdown-item"
+                                                                   href="./product.html">Jackets</a>
                                                             </li>
                                                             <li><a class="dropdown-item" href="./product.html">Jeans</a>
                                                             </li>
@@ -193,7 +235,8 @@
                                             <!--  /.container  -->
                                         </ul>
                                     </li>
-                                    <li class="nav-item dropdown"> <a class="nav-link " href="#"><span class="menu-label">تماس با ما</span></a>
+                                    <li class="nav-item dropdown"><a class="nav-link " href="#"><span
+                                                    class="menu-label">تماس با ما</span></a>
                                         {{--<ul class="dropdown-menu">
                                             <li class="dropdown"> <a class="dropdown-item dropdown-toggle" href="#">Product</a>
                                                 <ul class="dropdown-menu">
@@ -239,13 +282,14 @@
                                             </li>
                                         </ul>
                                     </li>--}}
-                                    <li class="nav-item dropdown"> <a class="nav-link " href="#"><span class="menu-label">در باره ما</span></a>
-                                       {{-- <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="./contact-1.html">Contact 1</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./contact-2.html">Contact 2</a>
-                                            </li>
-                                        </ul>--}}
+                                    <li class="nav-item dropdown"><a class="nav-link " href="#"><span
+                                                    class="menu-label">در باره ما</span></a>
+                                        {{-- <ul class="dropdown-menu">
+                                             <li><a class="dropdown-item" href="./contact-1.html">Contact 1</a>
+                                             </li>
+                                             <li><a class="dropdown-item" href="./contact-2.html">Contact 2</a>
+                                             </li>
+                                         </ul>--}}
                                     </li>
                                 </ul>
                             </div>
@@ -257,12 +301,14 @@
                                     </div>
                                 </li>
                                 <li class="list-inline-item">
-                                    <div class="cart"> <a href="#" id="header-cart-btn"><span class="cart-badge">2</span> <i class="ti-bag"></i></a>
+                                    <div class="cart"><a href="#" id="header-cart-btn"><span class="cart-badge">2</span>
+                                            <i class="ti-bag"></i></a>
                                         <!-- Cart List Area Start -->
                                         <ul class="cart-list">
                                             <li>
                                                 <a href="#" class="image">
-                                                    <img src="{{asset('img/product-thumb/01.jpg')}}" class="img-fluid cart-thumb" alt="" />
+                                                    <img src="{{asset('img/product-thumb/01.jpg')}}"
+                                                         class="img-fluid cart-thumb" alt=""/>
                                                 </a>
                                                 <div class="cart-item-desc">
                                                     <h6><a href="#">Women's Fashion</a></h6>
@@ -272,7 +318,8 @@
                                             </li>
                                             <li>
                                                 <a href="#" class="image">
-                                                    <img src="{{asset('img/product-thumb/02.jpg')}}" class="img-fluid cart-thumb" alt="" />
+                                                    <img src="{{asset('img/product-thumb/02.jpg')}}"
+                                                         class="img-fluid cart-thumb" alt=""/>
                                                 </a>
                                                 <div class="cart-item-desc">
                                                     <h6><a href="#">Women's Fashion</a></h6>
@@ -280,7 +327,7 @@
                                                     </p>
                                                 </div>
                                             </li>
-                                            <li class="total text-right"> <span class="d-block">Total: $110.00</span>
+                                            <li class="total text-right"><span class="d-block">Total: $110.00</span>
                                             </li>
                                             <li><a href="./product-cart.html" class="btn btn-theme btn-sm">Cart</a>
                                                 <a href="./checkout.html" class="btn btn-border btn-sm">Checkout</a>
@@ -296,76 +343,83 @@
         </div>
     </header>
     <div class="search">
-        <button id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="flaticon-cancel"></i>
+        <button id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i
+                    class="flaticon-cancel"></i>
         </button>
-        <form class="search-form" />
-        <input class="search-input" name="search" type="search" placeholder="drones" /> <span class="search-info">Hit enter to search or ESC to close</span>
+        <form class="search-form"/>
+        <input class="search-input" name="search" type="search" placeholder="drones"/> <span class="search-info">برای جستجو دکمه اینتر را فشار دهید </span>
         </form>
     </div>
-
 
 
 @yield('content')
 
 <!--footer start-->
+    <!--newsletter start-->
 
+    <section class="theme-bg py-5">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <h2 class="title">خبر<span>نامه</span></h2>
+                </div>
+                <div class="col-lg-8 col-md-12 md-mt-3">
+                    <div class="subscribe-form">
+                        <form id="mc-form" class="group row align-items-center"/>
+                        <div class="col-sm-8">
+                            <input type="email" value="" name="EMAIL" class="email box-shadow" id="mc-email"
+                                   placeholder="آدرس پست الکترونیک" required=""/>
+                        </div>
+                        <div class="col-sm-4 xs-mt-1">
+                            <input class="btn btn-white btn-circle" type="submit" name="subscribe"
+                                   value="ارسال"/>
+                        </div>
+                        <label for="mc-email" class="subscribe-message"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--newsletter end-->
     <footer class="footer dark-bg">
+
         <div class="primary-footer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6 footer-list">
-                        <h5>Information</h5>
+                        <h5>آخرین اخبار</h5>
                         <ul class="list-unstyled">
-                            <li><a href="./product.html">Top Sellers</a>
-                            </li>
-                            <li><a href="./product.html">New Product</a>
-                            </li>
-                            <li><a href="#">Delivery information</a>
-                            </li>
-                            <li><a href="./terms-and-conditions.html">Terms & Conditions</a>
-                            </li>
-                            <li><a href="#">Special</a>
-                            </li>
-                            <li><a href="#">Help Center</a>
-                            </li>
+                            @foreach($DataFooter['news'] as $news)
+                                <li><a href="">{{ $news['title'] }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 xs-mt-5 footer-list">
-                        <h5>Customer Service</h5>
+                        <h5>آخرین محصولات</h5>
                         <ul class="list-unstyled">
-                            <li><a href="./order-tracking.html">Order Tracking</a>
-                            </li>
-                            <li><a href="./contact-1.html">Help & Contact</a>
-                            </li>
-                            <li><a href="./product.html">Career</a>
-                            </li>
-                            <li><a href="./return-policy.html">Returns Policy</a>
-                            </li>
-                            <li><a href="#">Product Support</a>
-                            </li>
-                            <li><a href="#">Legal Notice</a>
-                            </li>
+                            @foreach($DataFooter['Product'] as $product)
+                                <li><a href="">{{ $product['title'] }}</a>
+                                </li>
+                            @endforeach
+
 
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6 md-mt-5 footer-list">
-                        <h5>My Account</h5>
+                        <h5>گلابسرا</h5>
                         <ul class="list-unstyled">
-                            <li><a href="#">My Account</a>
+                            <li><a href="#">درباره ما</a>
                             </li>
-                            <li><a href="#">Personal Information</a>
+                            <li><a href="#">تماس با ما</a>
                             </li>
-                            <li><a href="#">Order History</a>
-                            </li>
-                            <li><a href="#">Address</a>
-                            </li>
-                            <li><a href="./product-wishlist.html">Wish List</a>
-                            </li>
-                            <li><a href="#">Newsletter</a>
-                            </li>
+
                         </ul>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 md-mt-5">
+                    {{--<div class="col-lg-3 col-md-6 col-sm-6 md-mt-5">
                         <h5>Get In Touch</h5>
                         <ul class="media-icon list-unstyled">
                             <li class="mb-4">
@@ -381,32 +435,7 @@
                                 <p class="mb-0">Working Hours: 9:00am - 8:00pm</p>
                             </li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="row client-logo mt-10">
-                    <div class="col-md-12">
-                        <div class="owl-carousel owl-theme no-pb" data-dots="false" data-items="5" data-md-items="4" data-sm-items="3" data-margin="30" data-autoplay="true">
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}" alt="" />
-                            </div>
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}" alt="" />
-                            </div>
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}" alt="" />
-                            </div>
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}/" alt="" />
-                            </div>
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}" alt="" />
-                            </div>
-                            <div class="item">
-                                <img class="img-center" src="{{asset('img/client/01.png')}}" alt="" />
-                            </div>
-                        </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
@@ -414,7 +443,8 @@
             <div class="container">
                 <div class="copyright">
                     <div class="row">
-                        <div class="col-md-12"> <span class="text-white">Copyright 2018 Oveltyshop Theme by <a target="_blank" href="www.themeht.com"> ThemeHt </a> | All Rights Reserved</span>
+                        <div class="col-md-12"><span class="text-white">ستفاده از مطالب فروشگاه اینترنتی <a target="_blank"  href=""> گلابسرا </a> فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به فروشگاه آنلاین <a target="_blank"  href=""> گلابسرا </a> می‌باشد.
+                                 </span>
                         </div>
                     </div>
                 </div>
@@ -432,6 +462,7 @@
 
 <!--color-customizer start-->
 
+{{--
 <div class="color-customizer closed">
     <div class="color-button">
         <a class="opener" href="#"> <i class="fas fa-spinner fa-spin"></i>
@@ -450,6 +481,7 @@
         </div>
     </div>
 </div>
+--}}
 
 <!--color-customizer end-->
 

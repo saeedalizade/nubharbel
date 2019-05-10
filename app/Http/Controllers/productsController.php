@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\CategoryProduct;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Intervention\Image\Facades\Image;
 
 class productsController extends Controller
 {
@@ -47,9 +49,30 @@ class productsController extends Controller
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,png|max:2048',
 
         ]);
+
+        $file = Input::file('img') ;
+
         $imageName = time().'.'.request()->img->getClientOriginalExtension();
 
-        request()->img->move(public_path('img/product'), $imageName);
+        $Path = public_path('img/product');
+        $PathLarge = public_path('img/product/Large');
+        $PathMedium = public_path('img/product/Medium');
+        $PathRectangle = public_path('img/product/Rectangle');
+        $PathThumbnail = public_path('img/product/Thumbnail');
+
+
+        $PathLargeName = sprintf ('%s/%s',$PathLarge,$imageName);
+        $PathMediumName = sprintf ('%s/%s',$PathMedium,$imageName);
+        $PathRectangleName = sprintf ('%s/%s',$PathRectangle,$imageName);
+        $PathThumbnailName = sprintf ('%s/%s',$PathThumbnail,$imageName);
+
+
+       Image::make(request()->img->getRealPath())->resize(600,600)->save($PathLargeName);
+       Image::make(request()->img->getRealPath())->resize(450,600)->save($PathMediumName);
+       Image::make(request()->img->getRealPath())->resize(270,246)->save($PathThumbnailName);
+       Image::make(request()->img->getRealPath())->resize(470,246)->save($PathRectangleName);
+        $file->move($Path, $imageName);
+
         $data['img'] = $imageName;
 
         Product::create($data);
@@ -106,10 +129,45 @@ class productsController extends Controller
                 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,png|max:2048',
 
             ]);
+            $file = Input::file('img') ;
+
             $imageName = time().'.'.request()->img->getClientOriginalExtension();
 
-            request()->img->move(public_path('img/product'), $imageName);
+            $Path = public_path('img/product');
+            $PathLarge = public_path('img/product/Large');
+            $PathMedium = public_path('img/product/Medium');
+            $PathRectangle = public_path('img/product/Rectangle');
+            $PathThumbnail = public_path('img/product/Thumbnail');
 
+
+            $PathLargeName = sprintf ('%s/%s',$PathLarge,$imageName);
+            $PathMediumName = sprintf ('%s/%s',$PathMedium,$imageName);
+            $PathRectangleName = sprintf ('%s/%s',$PathRectangle,$imageName);
+            $PathThumbnailName = sprintf ('%s/%s',$PathThumbnail,$imageName);
+
+
+            Image::make(request()->img->getRealPath())->resize(600,600)->save($PathLargeName);
+            Image::make(request()->img->getRealPath())->resize(450,600)->save($PathMediumName);
+            Image::make(request()->img->getRealPath())->resize(270,246)->save($PathThumbnailName);
+            Image::make(request()->img->getRealPath())->resize(470,246)->save($PathRectangleName);
+            $file->move($Path, $imageName);
+
+            if(File::exists($Path.'/'.$Product['img'])){
+                File::delete($Path.'/'.$Product['img']);
+            }
+
+            if(File::exists($PathLarge.'/'.$Product['img'])){
+                File::delete($PathLarge.'/'.$Product['img']);
+            }
+            if(File::exists($PathMedium.'/'.$Product['img'])){
+                File::delete($PathMedium.'/'.$Product['img']);
+            }
+            if(File::exists($PathRectangle.'/'.$Product['img'])){
+                File::delete($PathRectangle.'/'.$Product['img']);
+            }
+            if(File::exists($PathThumbnail.'/'.$Product['img'])){
+                File::delete($PathThumbnail.'/'.$Product['img']);
+            }
             $data['img'] = $imageName;
            Product::where ('id', $id)->update ($data);
 

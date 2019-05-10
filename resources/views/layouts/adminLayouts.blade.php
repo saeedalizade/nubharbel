@@ -83,6 +83,8 @@
     <script src="{{ asset('admin/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
     <script src="{{ asset('admin/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js')}}" type="text/javascript"></script>
     <script type="text/javascript" src="{{ asset('admin/node_modules/multiselect/js/jquery.multi-select.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('admin/editor_TinyMCE/editor/tinymce.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('admin/editor_TinyMCE/editor.js')}}"></script>
 
     <script src='https://www.google.com/recaptcha/api.js?render=6Lfln4UUAAAAAA3QJbrY3bs9fyc2yepZ-Lih3C5O'></script>
 
@@ -414,6 +416,8 @@
                     <li> <a  href="{{ url('admin/CategoryProduct') }}"><i class="icon-layers"></i>دسته بندی محصولات</a></li></li>
 
                     <li> <a  href="{{ url('admin/Slider') }}"><i class="icon-picture "></i>اسلایدر</a></li></li>
+
+                    <li> <a  href="{{ url('admin/Post') }}"><i class="icon-layers"></i>پست ها</a></li></li>
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->

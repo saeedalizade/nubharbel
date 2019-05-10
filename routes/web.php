@@ -17,7 +17,6 @@ Auth::routes();
 //    return view('welcome');
 //});
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
 
@@ -34,6 +33,7 @@ Route::group (['prefix' => 'admin'], function () {
 
     Route::resource('Slider', 'slideshowController');
 
+    Route::resource('Post', 'PostsController');
 
     Route::resource('Product', 'productsController');
 
