@@ -46,12 +46,18 @@ class categoryProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\CategoryProduct  $categoryProduct
-     * @return \Illuminate\Http\Response
+     * @param  \App\CategoryProduct $categoryProduct
+     * @param $id
+     * @return void
      */
-    public function show(CategoryProduct $categoryProduct)
+    public function show(CategoryProduct $categoryProduct,$id)
     {
-        //
+
+
+        $data['ProductCats'] = CategoryProduct::find($id)->first();
+        $data['ProductInfo'] =  $data['ProductCats']->Products()->paginate(9);
+
+        return view ('Product.showProductList',compact ('data'));
     }
 
     /**
@@ -120,4 +126,5 @@ class categoryProductController extends Controller
             ]);
         }
     }
+
 }

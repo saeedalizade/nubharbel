@@ -162,77 +162,13 @@
                                         </ul>--}}
                                     </li>
 
-                                    <li class="nav-item dropdown fullwidth">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                                    class="menu-label">محصولات</span>
-                                        </a>
-                                        <ul class="dropdown-menu grid-12">
-                                            <li class="container">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <ul class="nav flex-column">
-                                                            <li class="menu-title">Women's Collection</li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Dresses</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Blouses</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">T-shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Bras
-                                                                    &amp; Panties</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col-md-4  -->
-                                                    <div class="col-md-4">
-                                                        <ul class="nav flex-column">
-                                                            <li class="menu-title">Men's Collection</li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">T-Shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Jeans</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Jackets</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Trench</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <!-- /.col-md-4  -->
-                                                    <div class="col-md-4">
-                                                        <ul class="nav flex-column">
-                                                            <li class="menu-title">Kids's Collection</li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Dresses</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">T-shirts</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item"
-                                                                   href="./product.html">Jackets</a>
-                                                            </li>
-                                                            <li><a class="dropdown-item" href="./product.html">Jeans</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!--  /.container  -->
+                                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"><span
+                                                    class="menu-label">محصولات</span></a>
+                                        <ul class="dropdown-menu">
+                                            @foreach($DataFooter['ProductCategory'] as $ProductCategory)
+                                                <li><a class="dropdown-item" href="{{ url('ProductList/'.$ProductCategory['id']) }}">{{$ProductCategory['title']}}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown"><a class="nav-link " href="#"><span
@@ -443,7 +379,9 @@
             <div class="container">
                 <div class="copyright">
                     <div class="row">
-                        <div class="col-md-12"><span class="text-white">ستفاده از مطالب فروشگاه اینترنتی <a target="_blank"  href=""> گلابسرا </a> فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به فروشگاه آنلاین <a target="_blank"  href=""> گلابسرا </a> می‌باشد.
+                        <div class="col-md-12"><span class="text-white">ستفاده از مطالب فروشگاه اینترنتی <a
+                                        target="_blank" href=""> گلابسرا </a> فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به فروشگاه آنلاین <a
+                                        target="_blank" href=""> گلابسرا </a> می‌باشد.
                                  </span>
                         </div>
                     </div>
