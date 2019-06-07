@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryProduct;
+use App\PicProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -52,7 +53,7 @@ class productsController extends Controller
 
         $file = Input::file('img') ;
 
-        $imageName = time().'.'.request()->img->getClientOriginalExtension();
+        $imageName = time().request()->img->getClientOriginalExtension();
 
         $Path = public_path('img/product');
         $PathLarge = public_path('img/product/Large');
@@ -85,9 +86,13 @@ class productsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Product $product,$id)
     {
-        //
+        $Product['Detail'] = Product::with('CategoryProduct')->where('id',$id)->first();
+        $Product['pic'] = picProduct::with('Product')->where('product_id',$id)->get();
+//
+//        dd($Product);
+        return view ('Product.productDetail',compact ('Product'));
     }
 
     /**
@@ -218,4 +223,7 @@ class productsController extends Controller
 
 
     }
+
+
+
 }

@@ -20,4 +20,11 @@ class Product extends Model
         return  Product::where('is_special','1')->orderBy('id', 'ASC')->limit(4)->get();
 
     }
+
+
+    public function PicProducts ()
+    {
+
+        return $this->hasMany(PicProduct::class,'product_id', 'id');
+    }
 }

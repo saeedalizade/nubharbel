@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer ('count');
             $table->integer ('price');
             $table->integer('discount');
+            $table->enum ('size',array('1','2','3','4','5','10','20'));
             $table->string ('img',100);
             $table->timestamps();
         });

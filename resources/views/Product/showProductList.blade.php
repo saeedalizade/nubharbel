@@ -9,7 +9,7 @@
                 <div class="col-lg-12 col-md-12">
                     <h1 class="mb-3">Product <span class="text-theme">Full width</span></h1>
                     <nav aria-label="breadcrumb">
-                        {{ Breadcrumbs::render('ProductList',$data['ProductCats']) }}
+                        {{ Breadcrumbs::render('product',$data['ProductCats']) }}
                     </nav>
                 </div>
             </div>
@@ -32,16 +32,19 @@
                             @foreach($data['ProductInfo'] as $product)
                                 <div class="col-lg-4 col-md-6 mt-5">
                                     <div class="product-item">
+
                                         <div class="product-img">
-                                            <img class="img-fluid" src="{{ url ('img/product/Medium/'.$product['img']) }}" alt=""/>
-                                            <div class="product-overlay">
+
+                                            <a href="{{ url('productDetail/'.$product['id']) }}"> <img class="img-fluid" src="{{ url ('img/product/Medium/'.$product['img']) }}" alt=""/>
+                                            </a>
+                                                <div class="product-overlay">
                                                 <ul class="list-unstyled">
                                                     <li>
                                                         <a href="#"> <i class="far fa-heart"></i>
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#"> <i class="far fa-eye"></i>
+                                                        <a href="{{ url('productDetail/'.$product['id']) }}"> <i class="far fa-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -51,7 +54,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="product-desc"><a href="product-detail.html" class="product-name">
+
+                                        <div class="product-desc"><a href=" {{ url('productDetail/'.$product['id']) }}" class="product-name">
                                                {{ $product['title'] }}
                                             </a>
                                             <span class="product-price">

@@ -69,7 +69,7 @@ class adminUserProfileController extends Controller
         $Profile = AdminUserProfile::where('user_id',$id)->first();
         if(!empty($Profile))
         {
-            $UserProfile = $Profile->with('user')->where('user_id',$id)->first();;
+            $UserProfile = $Profile->with('user')->where('user_id',$id)->first();
         }else{
             $UserProfile = User::find($id);
         }

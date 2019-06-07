@@ -32,7 +32,7 @@
     <!-- preloader start -->
 
     <div id="ht-preloader">
-        <div class="loader clear-loader"><img src="{{asset('img/loader.gif')}}" alt="" class="loader-img"/></div>
+        <div class="loader clear-loader"><a href="{{ route('home') }}"><img src="{{asset('img/loader.gif')}}" alt="گلابسرا، فروش گلاب و عرقیات گیاهی" class="loader-img"/></a></div>
     </div>
 
     <!-- preloader end -->
@@ -47,9 +47,9 @@
                     <div class="col-lg-6 col-md-4">
                         <div class="topbar-link">
                             <ul class="list-inline">
-                                <li class="list-inline-item"><span>ایمیل</span><a href="mailto:golabsara@gmail.com">golabsara@gmail.com</a>
+                                <li class="list-inline-item"><span>ایمیل</span>&nbsp;<a href="mailto:golabsara@gmail.com">golabsara@gmail.com</a>
                                 </li>
-                                <li class="list-inline-item"><span>تماس با ما</span><a href="tel:+989211786491">+989211786491</a>
+                                <li class="list-inline-item"><span>تماس با ما</span>&nbsp;<a href="tel:+989211786491">+989211786491</a>
                                 </li>
                             </ul>
                         </div>
@@ -78,8 +78,33 @@
                                                      </select>
                                                  </div>
                                              </li>--}}
-                                <li><a href="./login.html">ورود</a></li>
-                                <li><a href="./register.html">ثبت نام</a></li>
+                                @guest
+                                    <li><a href="{{ route('login') }}">ورود</a></li>
+                                    <li><a href="{{ route('register') }}">ثبت نام</a></li>
+                                @else
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                           دوست عزیز  &nbsp;{{ Auth::user()->name }}&nbsp; خوش آمدید  <span class="caret"></span>
+                                        </a>
+
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     $('#logout-form').submit();">
+                                                    خروج
+                                                </a>
+                                                <a href="#">
+                                                    پروفایل
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endguest
                             </ul>
                         </div>
                     </div>
@@ -92,7 +117,7 @@
                     <div class="col-md-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand logo" href="{{ route('home') }}">
-                                <img id="logo-img" class="img-center" src="{{asset('img/logo.png')}}" alt=""/>
+                                <img id="logo-img" class="img-center" src="{{asset('img/logo.png')}}" alt="'گلاب سرا،خرید و فروش عرقیات گیاهی"/>
                             </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                     data-target="#navbarNavDropdown" aria-expanded="false"
@@ -103,129 +128,39 @@
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <!-- Left nav -->
                                 <ul class="nav navbar-nav ml-auto mr-auto">
-                                    <li class="nav-item active"><a class="nav-link" href="{{ route('home') }}"><span
-                                                    class="menu-label">صفحه اصلی</span></a>
-                                        {{--<ul class="dropdown-menu">--}}
-                                        {{--<li><a class="dropdown-item" href="./index.html">Home 1</a>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a class="dropdown-item" href="./index-2.html">Home 2</a>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a class="dropdown-item" href="./index-3.html">Home 3</a>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a class="dropdown-item" href="./index-4.html">Home 4</a>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a class="dropdown-item" href="./index-sidemenu.html">Home 5</a>--}}
-                                        {{--</li>--}}
-                                        {{--<li><a class="dropdown-item" href="./index-furniture.html">Home 6</a>--}}
-                                        {{--</li>--}}
-                                        {{--</ul>--}}
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown"
-                                           aria-haspopup="true" aria-expanded="false"> <span
-                                                    class="menu-label">بلاگ</span>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{url('article')}}" role="button">
+                                            <span class="menu-label">بلاگ</span>
                                         </a>
-                                        {{--<ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="./product-wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./checkout.html">Checkout</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./order-complete.html">Order Complete</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./login.html">Login</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./register.html">Register</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./error-404.html">404</a>
-                                            </li>
-                                        </ul>--}}
+
                                     </li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link " href="#" role="button" data-toggle="dropdown"
-                                           aria-haspopup="true" aria-expanded="false"> <span
-                                                    class="menu-label">اخبار</span>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="{{url('news')}}" role="button">
+                                            <span class="menu-label">اخبار</span>
                                         </a>
-                                        {{--<ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="./product-wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./checkout.html">Checkout</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./order-complete.html">Order Complete</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./login.html">Login</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./register.html">Register</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./error-404.html">404</a>
-                                            </li>
-                                        </ul>--}}
+
                                     </li>
 
                                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#"><span
                                                     class="menu-label">محصولات</span></a>
                                         <ul class="dropdown-menu">
                                             @foreach($DataFooter['ProductCategory'] as $ProductCategory)
-                                                <li><a class="dropdown-item" href="{{ url('ProductList/'.$ProductCategory['id']) }}">{{$ProductCategory['title']}}</a>
+                                                <li><a class="dropdown-item"
+                                                       href="{{ url('product/'.$ProductCategory['id']) }}">{{$ProductCategory['title']}}</a>
                                                 </li>
                                             @endforeach
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown"><a class="nav-link " href="#"><span
                                                     class="menu-label">تماس با ما</span></a>
-                                        {{--<ul class="dropdown-menu">
-                                            <li class="dropdown"> <a class="dropdown-item dropdown-toggle" href="#">Product</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="./product-left-sidebar.html">Left Sidebar</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product-right-sidebar.html">Right Sidebar</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product.html">Fullwidth</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"> <a class="dropdown-item dropdown-toggle" href="#">Product Grid</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="./product-grid-2.html">Grid 2</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product-grid-3.html">Grid 3</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product-grid-left-sidebar.html">Grid Left Sidebar</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product-grid-right-sidebar.html">Grid Right Sidebar</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown"> <a class="dropdown-item dropdown-toggle" href="#">Product Single</a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item" href="./product-details.html">Product Single 1</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item" href="./product-details-2.html">Product Single 2</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li> <a class="dropdown-item" href="./product-cart.html">Product Cart</a>
-                                            </li>
-                                        </ul>--}}
+
                                     </li>
-                                    {{-- <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#"><span class="menu-label">Blog</span></a>
-                                       <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="./blog.html">Blog</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./blog-masonry.html">Blog masonry</a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="./blog-single.html">Blog Single</a>
-                                            </li>
-                                        </ul>
-                                    </li>--}}
+
                                     <li class="nav-item dropdown"><a class="nav-link " href="#"><span
                                                     class="menu-label">در باره ما</span></a>
-                                        {{-- <ul class="dropdown-menu">
-                                             <li><a class="dropdown-item" href="./contact-1.html">Contact 1</a>
-                                             </li>
-                                             <li><a class="dropdown-item" href="./contact-2.html">Contact 2</a>
-                                             </li>
-                                         </ul>--}}
+
                                     </li>
                                 </ul>
                             </div>
@@ -302,9 +237,10 @@
                 </div>
                 <div class="col-lg-8 col-md-12 md-mt-3">
                     <div class="subscribe-form">
-                        <form id="mc-form" class="group row align-items-center"/>
-                        <div class="col-sm-8">
-                            <input type="email" value="" name="EMAIL" class="email box-shadow" id="mc-email"
+                        <form id="mc-form" class="group row align-items-center NewsLetter" action="{{ route ('newsLetter') }}" method="post" />
+                        {{ csrf_field() }}
+                        <div class="col-sm-8 form-group">
+                            <input type="email" value="" name="email" class="email box-shadow form-control" id="email"
                                    placeholder="آدرس پست الکترونیک" required=""/>
                         </div>
                         <div class="col-sm-4 xs-mt-1">
@@ -379,7 +315,7 @@
             <div class="container">
                 <div class="copyright">
                     <div class="row">
-                        <div class="col-md-12"><span class="text-white">ستفاده از مطالب فروشگاه اینترنتی <a
+                        <div class="col-md-12"><span class="text-white">استفاده از مطالب فروشگاه اینترنتی <a
                                         target="_blank" href=""> گلابسرا </a> فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به فروشگاه آنلاین <a
                                         target="_blank" href=""> گلابسرا </a> می‌باشد.
                                  </span>

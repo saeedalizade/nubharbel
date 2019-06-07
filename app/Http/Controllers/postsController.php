@@ -70,18 +70,29 @@ class postsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param  \App\Post $post
+     * @param $id
+     * @return void
      */
-    public function show(Post $post)
+    public function show(Post $post,$id)
     {
-        //
+        $newsDetail = Post::find($id);
+        return view ('Post.newsDetail',compact ('newsDetail'));
+    }
+
+
+    public function articleView(Post $post ,$id)
+    {
+
+        $articleDetail =Post::find($id);;
+        return view ('Post.articleDetail',compact ('articleDetail'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Post  $post
+     * @param  \App\Post $post
+     * @param $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Post $post ,$id)
@@ -151,4 +162,22 @@ class postsController extends Controller
     {
         //
     }
+
+
+    public function newsList ()
+    {
+        $ListPost = Post::where('type','news')->paginate(9);
+
+        return view ('Post.listPost', compact ('ListPost'));
+    }
+
+    public function articleList ()
+    {
+        $articleList = Post::where('type','article')->paginate(9);
+
+        return view ('Post.articleList', compact ('articleList'));
+    }
+
+
+
 }

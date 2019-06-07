@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ asset('admin/node_modules/dropify/dist/css/dropify.min.css')}}" />
     <link href="{{ asset('admin/node_modules/bootstrap-switch/bootstrap-switch.min.css')}}" rel="stylesheet" />
     <link href="{{ asset('admin/css/pages/bootstrap-switch.css')}}" rel="stylesheet" />
+
+    <link href=" {{ asset('admin/node_modules/dropzone-master/dist/dropzone.css')}}" rel="stylesheet" type="text/css" />
     {{--start js file--}}
     <script src="{{ asset('admin/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('admin/js/jquery.validate.js')}}"></script>
@@ -82,9 +84,11 @@
     <script src="{{ asset('admin/node_modules/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
     <script src="{{ asset('admin/node_modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
     <script src="{{ asset('admin/node_modules/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.js')}}" type="text/javascript"></script>
-    <script type="text/javascript" src="{{ asset('admin/node_modules/multiselect/js/jquery.multi-select.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('admin/editor_TinyMCE/editor/tinymce.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('admin/editor_TinyMCE/editor.js')}}"></script>
+    <script src="{{ asset('admin/node_modules/multiselect/js/jquery.multi-select.js')}}"  type="text/javascript"></script>
+    <script src="{{ asset('admin/editor_TinyMCE/editor/tinymce.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('admin/editor_TinyMCE/editor.js')}}" type="text/javascript"></script>
+    <!-- Dropzone Plugin JavaScript -->
+    <script src="{{ asset('admin/node_modules/dropzone-master/dist/dropzone.js')}}"></script>
 
     <script src='https://www.google.com/recaptcha/api.js?render=6Lfln4UUAAAAAA3QJbrY3bs9fyc2yepZ-Lih3C5O'></script>
 

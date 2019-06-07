@@ -18,7 +18,22 @@ Auth::routes();
 //});
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('ProductList/{id}', 'categoryProductController@show')->name('ProductList');
+
+
+Route::get('ProfileUser', 'userController@ProfileUser')->name('ProfileUser');
+Route::post('ProfileUser/{id}', 'userController@editProfileUser');
+Route::post('newsLetter', 'newsLetterController@store')->name('newsLetter');
+
+//Product
+Route::get('product/{id}', 'categoryProductController@show')->name('product');
+Route::get('productDetail/{id}','productsController@show')->name('productDetail');
+
+
+Route::get('news','postsController@newsList')->name('news');
+Route::get('news/{id}','postsController@show')->name('newsDetail');
+Route::get('article','postsController@articleList')->name('article');
+Route::get('article/{id}','postsController@articleView')->name('articleDetail');
+
 
 
 Route::group (['prefix' => 'admin'], function () {
@@ -39,5 +54,10 @@ Route::group (['prefix' => 'admin'], function () {
     Route::resource('Product', 'productsController');
 
     Route::resource('CategoryProduct', 'categoryProductController');
+
+    Route::get('pic/{id}','picProductController@create')->name('pic');
+    Route::get('PicProduct/{id}','picProductController@index')->name('PicProduct');
+    Route::post('picUpload/{id}','picProductController@store')->name('picUpload');
+    Route::DELETE('deletePic/{id}','picProductController@destroy')->name('deletePic');
 
 });

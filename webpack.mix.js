@@ -31,6 +31,7 @@ mix.combine([
     'resources/assets/css/default-theme.css',
     'resources/assets/css/responsive.css',
     'resources/assets/css/color-customize/color-customizer.css',
+    'resources/assets/css/jquery.toast.css',
     'resources/assets/css/custom.css',
 ],'public/css/all.css');
 
@@ -58,4 +59,7 @@ mix.combine([
     'resources/assets/js/wow.min.js',
     'resources/assets/js/color-customize/color-customizer.js',
     'resources/assets/js/theme-script.js',
+    'resources/assets/js/jquery.validate.js',
+    'resources/assets/js/jquery.toast.js',
+    'resources/assets/js/costume.js',
 ],'public/js/all.js');

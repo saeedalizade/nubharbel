@@ -196,7 +196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020024', end
 #mc-form input[type="email"]:-ms-input-placeholder {color: #ffffff;}
 #mc-form input[type="email"].placeholder {color: #ffffff !important;}
 #mc-form input[type=submit] {padding: 10px 25px;}
-#mc-form label {color: #ffffff; font-size: 12px; padding: 0 2rem; margin: 0; position: absolute; left: 0; bottom: -20px;}
+#mc-form label {color: #f30000; font-size: 12px; padding: 0 2rem; margin: 0; position: absolute; left: 0; bottom: -20px;}
 .dark-bg #mc-form label {color: #fff;}
 
 .subscribe-form.style-2 #mc-form input[type="email"]{padding-right: 50px;}
@@ -298,8 +298,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020024', end
 .header {position: absolute; width: 100%; z-index: 999;}
 #header-wrap{background: #ffffff;}
 #header-wrap.fixed-header {position: fixed; top:0; left:0; width: 100%; z-index: 999 !important; background: #ffffff !important;}
-.logo img {height: 50px;}
-#header-wrap.fixed-header .logo img {height: 45px;}
+.logo img {height: 93px;}
+#header-wrap.fixed-header .logo img {height: 85px;}
 .header-2{position: inherit;}
 
 .header-5 #header-wrap, .header-5 .top-bar {background: rgba(255,255,255,0.2);}

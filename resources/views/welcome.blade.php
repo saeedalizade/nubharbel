@@ -32,8 +32,8 @@
                 </div>
         @endforeach
         <!-- /sl-slider -->
-            <nav id="nav-arrows" class="nav-arrows"><span class="nav-arrow-prev">Previous</span>
-                <span class="nav-arrow-next">Next</span>
+            <nav id="nav-arrows" class="nav-arrows"><span class="nav-arrow-prev">قبلی</span>
+                <span class="nav-arrow-next">بعدی</span>
             </nav>
             <nav id="nav-dots" class="nav-dots">
                 <span class="nav-dot-current"></span>
@@ -62,7 +62,7 @@
                                  alt=""/>
                             <div class="product-add-hover">
                                 <h4 class="large-font"><?php echo $data['SpecialProduct'][0]['title']?></h4>
-                                <a class="btn btn-theme btn-iconic btn-circle mt-2" href="#"><span>خرید  <i
+                                <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][0]['id']) }}"><span>خرید  <i
                                                 class="fas fa-shopping-cart"></i></span></a>
                             </div>
                             {{--<div class="add-sale-label">Sale</div>--}}
@@ -77,6 +77,8 @@
                                              alt=""/>
                                         <div class="product-add-hover">
                                             <h4><?php echo $data['SpecialProduct'][1]['title']?></h4>
+                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][1]['id']) }}"><span>خرید  <i
+                                                            class="fas fa-shopping-cart"></i></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,6 +88,8 @@
                                              alt=""/>
                                         <div class="product-add-hover">
                                             <h4><?php echo $data['SpecialProduct'][2]['title']?></h4>
+                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][2]['id']) }}"><span>خرید  <i
+                                                            class="fas fa-shopping-cart"></i></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -96,8 +100,8 @@
                                         <img src="{{asset('img/product/Rectangle/'.$data['SpecialProduct'][3]['img'])}}"
                                              alt=""/>
                                         <div class="product-add-hover">
-                                            <h4 class="large-font-2 text-black"><?php echo $data['SpecialProduct'][3]['title']?></h4>
-                                            <a class="btn btn-theme btn-iconic btn-circle" href="#"><span>خرید <i
+                                            <h4><?php echo $data['SpecialProduct'][2]['title']?></h4>
+                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][3]['id']) }}"><span>خرید  <i
                                                             class="fas fa-shopping-cart"></i></span></a>
                                         </div>
                                     </div>
@@ -133,8 +137,8 @@
                                 <div class="item">
                                     <div class="product-item">
                                         <div class="product-img">
-                                            <img class="img-fluid"
-                                                 src="{{asset('img/product/Medium/'.$product['img'])}}" alt=""/>
+                                            <a href="{{ url('productDetail/'.$product['id']) }}">   <img class="img-fluid"
+                                                 src="{{asset('img/product/Medium/'.$product['img'])}}" alt=""/>  </a>
                                             <div class="product-overlay">
                                                 <ul class="list-unstyled">
                                                     <li>
@@ -142,7 +146,7 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="#"> <i class="far fa-eye"></i>
+                                                        <a href="{{ url('productDetail/'.$product['id']) }}"> <i class="far fa-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -152,7 +156,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="product-desc"><a href="product-detail.html" class="product-name">
+                                        <div class="product-desc"><a href="{{ url('productDetail/'.$product['id']) }}" class="product-name">
                                                 <?php echo $product['title']?>
                                             </a>
                                             <span class="product-price"> <?php echo $product['price']?>    </span>
@@ -901,7 +905,7 @@
                                     <div class="post-title">
                                         <h5><a href="{{-- route('Post/'.$article['id']) --}}">{{$article['title']}}</a></h5>
                                     </div>
-                                    <p>{{ strip_tags($article['description']) }}</p> <a class="post-btn" href="./blog-single.html">بیشتر بخوانید<i
+                                    <p>{{ strip_tags($article['description']) }}</p> <a class="post-btn" href="{{ url('article/'.$article['id']) }}">بیشتر بخوانید<i
                                                 class="ml-2 fas fa-long-arrow-alt-left"></i></a>
                                 </div>
                             </div>

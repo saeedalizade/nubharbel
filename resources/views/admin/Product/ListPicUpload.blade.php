@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <!-- ============================================================== -->
     <!-- Start Page Content -->
     <!-- ============================================================== -->
@@ -13,7 +12,7 @@
                     <h4 class="card-title">لیست محصولات</h4>
                     <h6 class="card-subtitle">لیست  تمامی محصولات  را از لیست زیر میتوانید مشاهده کنید
                         <a class="btn btn-info d-none d-lg-block m-l-15 pull-right"
-                           href="{{ url('admin/Product/create') }}"><i
+                           href="{{ url('admin/pic/'. $ListPicUpload['id']) }}"><i
                                     class="fa fa-image"></i> افزودن محصول</a>
                     </h6>
                     <div class="table-responsive m-t-40">
@@ -21,41 +20,25 @@
                             <thead>
                             <tr>
                                 <th>ردیف</th>
-                                <th>عنوان</th>
-                                <th>دسته بندی</th>
-                                <th>تعداد</th>
-                                <th>تاریخ ثبت</th>
-                                <th>تاریخ آخرین ویرایش</th>
+                                <th>تصویر</th>
+                                <th>تاریخ ایجاد</th>
                                 <th>عملیات</th>
+
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($Products as $key=>$Product)
-                                <tr id="del-{{$Product->id}}">
+                            @foreach($ListPicUpload['data'] as $key=>$pic)
+                                <tr id="del-{{$pic->id}}">
                                     <td>{{$key+1}}</td>
-                                    <td>{{$Product->title}}</td>
-                                    <td>{{$Product->CategoryProduct->title}}</td>
-                                    <td>{{$Product->count}}</td>
+                                    <td><img src="{{ asset('img/picProduct/Thumbnail/'.$pic['img']) }}"></td>
                                     <td>
-                                        @php $Created = new Verta($Product->created_at);@endphp
+                                        @php $Created = new Verta($pic->created_at);@endphp
                                         {{ $Created->format('H:i Y-m-d')}}
                                     </td>
                                     <td>
-                                        @php $Updated = new Verta($Product->updated_at);@endphp
-                                        {{$Updated->format('H:i Y-m-d')}}
-                                    </td>
-                                    <td>
-                                        <a type="button" class="btn btn-outline-primary"
-                                           href="{{ url ('/admin/Product/'.$Product->id.'/edit') }}" target="_blank"><i
-                                                    class="fa fa-pencil"></i>
-                                        </a>
 
-                                        <a type="button" class="btn btn-outline-info"
-                                           href="{{ url ('/admin/PicProduct/'.$Product->id) }}" target="_blank"><i
-                                                    class="fa fa-file-image-o"></i>
-                                        </a>
                                         <a type="button" class="btn btn-outline-danger" href="#"
-                                           onclick="DeleteProduct('{{$Product->id }}','{{csrf_token ()}}'); return false;"><i
+                                           onclick="DeletePicProduct('{{$pic->id }}','{{csrf_token ()}}'); return false;"><i
                                                     class="fa fa-trash"></i>
                                         </a>
 

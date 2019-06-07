@@ -156,5 +156,56 @@
     }
 
 
+
+    function DeletePicProduct(id,CsrfToken) {
+
+        $.ajax(
+            {
+                url: "/admin/deletePic/" + id,
+                type: 'POST',
+                dataType: "JSON",
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                data: {
+                    "id":id,
+                    "_method": 'DELETE',
+                    "_token": CsrfToken,
+                },
+                success: function (data) {
+                    var keyResponse = Object.keys(data);
+
+                    if (keyResponse.indexOf('Success') > -1) {
+                        $.toast({
+                            heading: 'حذف تصویر محصول',
+                            text: data['Success'],
+                            position: 'top-left',
+                            loaderBg: '#ff6849',
+                            icon: 'success',
+                            hideAfter: 3500,
+                            stack: 6
+                        });
+
+                        setTimeout(function () {
+                            $('#del-'+id).remove();
+                        }, 500);
+                    } else {
+                        $.toast({
+                            heading: 'حذف تصویر محصول',
+                            text: data['Error'],
+                            position: 'top-left',
+                            loaderBg: '#ff6849',
+                            icon: 'error',
+                            hideAfter: 3500,
+                            stack: 6
+                        })
+                    }
+
+
+                }
+
+            }
+        );
+    }
+
+
 </script>
 

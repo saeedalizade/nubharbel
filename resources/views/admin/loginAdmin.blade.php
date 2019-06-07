@@ -9,7 +9,7 @@
     <section id="wrapper" class="login-register login-sidebar" style="background-image:url({{ asset('admin/images/background/login-register.jpg') }});">
         <div class="login-box card">
             <div class="card-body">
-                <form class="form-horizontal form-material" id="loginform" action="checkLogin" method="post" />
+                <form class="form-horizontal form-material " id="loginform" action="checkLogin" method="post" />
                 {{ csrf_field() }}
                 <a href="javascript:void(0)" class="text-center db"><img src="{{ asset('admin/images/logo-icon.png') }}" alt="Home" /><br /><img src="{{ asset('admin/images/logo-text.png') }}" alt="Home" /></a>
                 <div class="form-group m-t-40">
