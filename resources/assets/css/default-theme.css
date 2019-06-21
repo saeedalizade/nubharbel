@@ -233,7 +233,7 @@ iframe{width: 100%; border: none; pointer-events: none;}
 /*Product Slider*/ 
 .slick3-dots-main {width: 100%;}
 .slick3 {width: 100%;}
-.slick3-dots {display: table; width: 100%;}
+.slick3-dots {display: table; /*width: 100%;*/}
 .slick3-dots li {display: table-cell; width: auto; position: relative; border-right: 2px solid #ffffff;}
 .slick3-dots li:last-child{border-right:none;}
 .product-details2 .slick3-dots li{display: block; border-right: none;}

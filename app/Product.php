@@ -17,7 +17,7 @@ class Product extends Model
 
     public function IsSpecialProduct ()
     {
-        return  Product::where('is_special','1')->orderBy('id', 'ASC')->limit(4)->get();
+        return  Product::where('is_special','1')->orderBy('id', 'ASC')->limit(2)->get();
 
     }
 

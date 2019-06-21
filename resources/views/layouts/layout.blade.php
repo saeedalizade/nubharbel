@@ -154,6 +154,14 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown"><a class="nav-link " href="#"><span
+                                                    class="menu-label">راهنمای خرید آنلاین</span></a>
+
+                                    </li>
+                                    <li class="nav-item dropdown"><a class="nav-link " href="#"><span
+                                                    class="menu-label">قوانین و مقررات</span></a>
+
+                                    </li>
+                                    <li class="nav-item dropdown"><a class="nav-link " href="#"><span
                                                     class="menu-label">تماس با ما</span></a>
 
                                     </li>

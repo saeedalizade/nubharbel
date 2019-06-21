@@ -33,6 +33,7 @@ Route::get('news','postsController@newsList')->name('news');
 Route::get('news/{id}','postsController@show')->name('newsDetail');
 Route::get('article','postsController@articleList')->name('article');
 Route::get('article/{id}','postsController@articleView')->name('articleDetail');
+Route::post('comment/{id}','commentController@store')->name('createComment');
 
 
 

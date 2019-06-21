@@ -78,54 +78,50 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post-comments mt-5 pos-r">
-                                    <div class="section-title mb-4">
-                                        <h3 class="title">Leave A <span>Comment</span></h3>
-                                    </div>
-                                    <form id="contact-form" method="post" action="contact.php"/>
-                                    <div class="messages"></div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input id="form_name" type="text" name="name" class="form-control"
-                                                       placeholder="Name" required="required"
-                                                       data-error="Name is required."/>
-                                                <div class="help-block with-errors"></div>
+                                @auth
+                                    <div class="post-comments mt-5 pos-r">
+                                        <div class="section-title mb-4">
+                                            <h3 class="title">نظر <span>شما</span></h3>
+                                        </div>
+                                        <form id="PostComment" class="PostComment" method="post" action="/comment/{{ auth()->user ()->id }}"/>
+                                        {{ csrf_field () }}
+                                        <input type="hidden" name="type" id="type" value="post">
+                                        <input type="hidden" name="id_related" id="id_related" value="{{$newsDetail['id']}}">
+                                        <div class="messages"></div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input id="form_name" type="text" name="name" class="form-control"
+                                                           placeholder="نام خود را وارد نمائید" required="required" value="{{auth()->user ()->name}}"
+                                                           disabled="disabled"/>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input id="form_email" type="email" name="email" class="form-control"
+                                                           placeholder="پست الکترونیک خود را وارد نمائید"
+                                                           required="required" value="{{auth()->user ()->email}}"  disabled="disabled"/>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input id="form_email" type="email" name="email" class="form-control"
-                                                       placeholder="Email" required="required"
-                                                       data-error="Valid email is required."/>
-                                                <div class="help-block with-errors"></div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                <textarea id="comment" name="comment" class="form-control"
+                                                          placeholder="نظر شما" rows="4" required="required"></textarea>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button class="btn btn-theme btn-circle"><span>ارسال نظر</span>
+                                                </button>
                                             </div>
                                         </div>
+                                        </form>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <input id="form_subject" type="text" name="name" class="form-control"
-                                                       placeholder="Subject"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <textarea id="form_message" name="message" class="form-control"
-                                                          placeholder="Your Comment" rows="4" required="required"
-                                                          data-error="Please,leave us a message."></textarea>
-                                                <div class="help-block with-errors"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <button class="btn btn-theme btn-circle"><span>Post Comment</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    </form>
-                                </div>
+                                @endauth
                             </div>
                         </div>
                     </div>

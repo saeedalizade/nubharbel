@@ -53,62 +53,25 @@
         <div class="insideText">گلاب سرا</div>
         <!--product add start-->
 
-        <section>
-            <div class="container">
-                <div class="row row-eq-height">
-                    <div class="col-lg-6">
-                        <div class="product-add">
-                            <img class="h-100" src="{{asset('img/product/Large/'.$data['SpecialProduct'][0]['img'])}}"
-                                 alt=""/>
-                            <div class="product-add-hover">
-                                <h4 class="large-font"><?php echo $data['SpecialProduct'][0]['title']?></h4>
-                                <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][0]['id']) }}"><span>خرید  <i
-                                                class="fas fa-shopping-cart"></i></span></a>
-                            </div>
-                            {{--<div class="add-sale-label">Sale</div>--}}
-                        </div>
-                    </div>
-                    <div class="col-lg-6 md-mt-3">
-                        <div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="product-add">
-                                        <img src="{{asset('img/product/Thumbnail/'.$data['SpecialProduct'][1]['img'])}}"
-                                             alt=""/>
-                                        <div class="product-add-hover">
-                                            <h4><?php echo $data['SpecialProduct'][1]['title']?></h4>
-                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][1]['id']) }}"><span>خرید  <i
-                                                            class="fas fa-shopping-cart"></i></span></a>
-                                        </div>
-                                    </div>
+        <section class="o-hidden p-0">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+
+                    @foreach($data['SpecialProduct'] as $special)
+                        <div class="col-lg-6 col-md-12 ">
+                            <div class="product-add">
+                                <img class="h-100" src="{{asset('img/product/Large/'.$special['img'])}}" alt="">
+                                <div class="product-add-hover">
+                                    <h6>{{ $special['title'] }}</h6>
+                                    <a class="btn btn-theme btn-iconic btn-circle mt-2"
+                                       href="{{ url('productDetail/'.$special['id']) }}"><span>خرید  <i
+                                                    class="fas fa-shopping-cart"></i></span></a>
                                 </div>
-                                <div class="col-sm-6 xs-mt-3">
-                                    <div class="product-add">
-                                        <img src="{{asset('img/product/Thumbnail/'.$data['SpecialProduct'][2]['img'])}}"
-                                             alt=""/>
-                                        <div class="product-add-hover">
-                                            <h4><?php echo $data['SpecialProduct'][2]['title']?></h4>
-                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][2]['id']) }}"><span>خرید  <i
-                                                            class="fas fa-shopping-cart"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-md-12">
-                                    <div class="product-add">
-                                        <img src="{{asset('img/product/Rectangle/'.$data['SpecialProduct'][3]['img'])}}"
-                                             alt=""/>
-                                        <div class="product-add-hover">
-                                            <h4><?php echo $data['SpecialProduct'][2]['title']?></h4>
-                                            <a class="btn btn-theme btn-iconic btn-circle mt-2" href="{{ url('productDetail/'.$data['SpecialProduct'][3]['id']) }}"><span>خرید  <i
-                                                            class="fas fa-shopping-cart"></i></span></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="add-sale-label">فروش ویژه</div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </section>
@@ -137,8 +100,9 @@
                                 <div class="item">
                                     <div class="product-item">
                                         <div class="product-img">
-                                            <a href="{{ url('productDetail/'.$product['id']) }}">   <img class="img-fluid"
-                                                 src="{{asset('img/product/Medium/'.$product['img'])}}" alt=""/>  </a>
+                                            <a href="{{ url('productDetail/'.$product['id']) }}"> <img class="img-fluid"
+                                                                                                       src="{{asset('img/product/Medium/'.$product['img'])}}"
+                                                                                                       alt=""/> </a>
                                             <div class="product-overlay">
                                                 <ul class="list-unstyled">
                                                     <li>
@@ -146,7 +110,8 @@
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a href="{{ url('productDetail/'.$product['id']) }}"> <i class="far fa-eye"></i>
+                                                        <a href="{{ url('productDetail/'.$product['id']) }}"> <i
+                                                                    class="far fa-eye"></i>
                                                         </a>
                                                     </li>
                                                     <li>
@@ -156,7 +121,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="product-desc"><a href="{{ url('productDetail/'.$product['id']) }}" class="product-name">
+                                        <div class="product-desc"><a href="{{ url('productDetail/'.$product['id']) }}"
+                                                                     class="product-name">
                                                 <?php echo $product['title']?>
                                             </a>
                                             <span class="product-price"> <?php echo $product['price']?>    </span>
@@ -895,17 +861,22 @@
                         <div class="col-lg-4 col-md-12">
                             <div class="post">
                                 <div class="post-image">
-                                    <img class="img-fluid w-100" src="{{url('img/Post/Large/'.$article['img'])}}" alt=""/>
+                                    <img class="img-fluid w-100" src="{{url('img/Post/Large/'.$article['img'])}}"
+                                         alt=""/>
                                     @php $Created = new Verta($article['created_at']);@endphp
 
-                                    <div class="post-date">{{ $Created->format('d')}} <span>{{ $Created->format('F')}}</span>
+                                    <div class="post-date">{{ $Created->format('d')}}
+                                        <span>{{ $Created->format('F')}}</span>
                                     </div>
                                 </div>
                                 <div class="post-desc">
                                     <div class="post-title">
-                                        <h5><a href="{{-- route('Post/'.$article['id']) --}}">{{$article['title']}}</a></h5>
+                                        <h5><a href="{{-- route('Post/'.$article['id']) --}}">{{$article['title']}}</a>
+                                        </h5>
                                     </div>
-                                    <p>{{ strip_tags($article['description']) }}</p> <a class="post-btn" href="{{ url('article/'.$article['id']) }}">بیشتر بخوانید<i
+                                    <p>{{ strip_tags($article['description']) }}</p> <a class="post-btn"
+                                                                                        href="{{ url('article/'.$article['id']) }}">بیشتر
+                                        بخوانید<i
                                                 class="ml-2 fas fa-long-arrow-alt-left"></i></a>
                                 </div>
                             </div>
@@ -931,7 +902,8 @@
                                 <h5>پرداخت در محل</h5>
                             </div>
                             <div class="featured-desc">
-                                <p>شما میتوانید مبلغ سفارش خود را هم به صورت آنلاین از درگاه،و هم ازطریق پرداخت در محل انجام دهید </p>
+                                <p>شما میتوانید مبلغ سفارش خود را هم به صورت آنلاین از درگاه،و هم ازطریق پرداخت در محل
+                                    انجام دهید </p>
                             </div>
                         </div>
                     </div>
@@ -943,7 +915,8 @@
                                 <h5>حمل رایگان</h5>
                             </div>
                             <div class="featured-desc">
-                                <p>گلابسرا مفتخر است که برای خرید های بالای 50 هزار تومان ،محصول را به رایگان به دست شما برساند</p>
+                                <p>گلابسرا مفتخر است که برای خرید های بالای 50 هزار تومان ،محصول را به رایگان به دست شما
+                                    برساند</p>
                             </div>
                         </div>
                     </div>
@@ -957,7 +930,7 @@
                             <div class="featured-desc">
                                 <p>گلابسرا محصولات خود را تضمین منماید
                                     ،محصولات گلابسرا 100% ارگانیک و بدون اسناس می باشد
-                                خریدی با کیفیت داشته باشید
+                                    خریدی با کیفیت داشته باشید
                                 </p>
 
                             </div>
@@ -968,9 +941,6 @@
         </section>
 
         <!--feuture end-->
-
-
-
 
 
     </div>
