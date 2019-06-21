@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\Post;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
@@ -76,16 +78,25 @@ class postsController extends Controller
      */
     public function show(Post $post,$id)
     {
-        $newsDetail = Post::find($id);
-        return view ('Post.newsDetail',compact ('newsDetail'));
+        $data['newsDetail'] = Post::find($id);
+        $data['commentNews'] = Comment::where('id_related',$id)->where('type','post')->with('UserProfile')->get();
+        return view ('Post.newsDetail',compact ('data'));
     }
 
 
     public function articleView(Post $post ,$id)
     {
+//                \DB::enableQueryLog();
+//        $data['commentArticle'] = Comment::where('id_related',$id)->with('UserProfile')->get();
+//        $query = \DB::getQueryLog();
 
-        $articleDetail =Post::find($id);;
-        return view ('Post.articleDetail',compact ('articleDetail'));
+
+        $data['articleDetail'] =Post::find($id);
+
+        $data['commentArticle'] = Comment::where('id_related',$id)->where('type','post')->with('UserProfile')->get();
+
+//        dd($data['commentArticle']);
+        return view ('Post.articleDetail',compact ('data'));
     }
 
     /**

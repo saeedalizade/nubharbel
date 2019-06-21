@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\CategoryProduct;
+use App\Comment;
 use App\PicProduct;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
 use File;
+
 
 class productsController extends Controller
 {
@@ -91,6 +93,7 @@ class productsController extends Controller
     {
         $Product['Detail'] = Product::with('CategoryProduct')->where('id',$id)->first();
         $Product['pic'] = picProduct::with('Product')->where('product_id',$id)->get();
+        $Product['commentProduct'] = Comment::where('id_related',$id)->where('type','product')->with('UserProfile')->get();
 //
 //        dd($Product);
         return view ('Product.productDetail',compact ('Product'));

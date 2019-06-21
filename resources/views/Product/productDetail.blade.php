@@ -134,7 +134,7 @@
                                    {{-- <a class="nav-item nav-link" id="nav-tab2" data-toggle="tab" href="#tab3-2"
                                        role="tab" aria-selected="false">Additional information</a>--}}
                                     <a class="nav-item nav-link" id="nav-tab3" data-toggle="tab" href="#tab3-3"
-                                       role="tab" aria-selected="false">نظرات (2)</a>
+                                       role="tab" aria-selected="false">نظرات ({{ count($Product['commentProduct']) }})</a>
                                 </div>
                             </nav>
                             <!-- Tab panes -->
@@ -181,42 +181,19 @@
                                     </table>
                                 </div>--}}
                                 <div role="tabpanel" class="tab-pane fade" id="tab3-3">
-                                    <h5 class="mb-3">نظرات <span class="text-theme">کاربران (2) </span></h5>
+                                    <h5 class="mb-3">نظرات <span class="text-theme">کاربران ({{ count($Product['commentProduct']) }}) </span></h5>
                                     <div class="media-holder review-list">
-                                        <div class="media">
-                                            <img class="img-center rounded-circle mr-3" alt="image"
-                                                 src="./images/product-thumb/01.jpg"/>
-                                            <div class="media-body">
-                                                <h6>John Glemean</h6>
-                                                <p>The sweeping the cloud what might be right for you may not be right
-                                                    for some here is the story of a man named Brady who was busy with
-                                                    three right for you may not be right.</p> <span
-                                                        class="review-rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </span>
+                                        @foreach($Product['commentProduct'] as $comment)
+                                            <div class="media mt-5">
+                                                <img class="img-center ml-3 img-comment-with-100" alt="image" src="{{ asset('img/avatar_profile/'.$comment->UserProfile['avatar']) }}"/>
+                                                <div class="media-body">
+                                                    <h6>{{ $comment->UserProfile->user['name'] }}</h6>
+                                                    <p>{{$comment->comment}}</p>
+                                                    {{--<div class="reply"><a href="#" class="comment-reply">Reply</a>--}}
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="media mt-5">
-                                            <img class="img-center rounded-circle mr-3" alt="image"
-                                                 src="./images/product-thumb/02.jpg"/>
-                                            <div class="media-body">
-                                                <h6>John Glemean</h6>
-                                                <p>The sweeping the cloud what might be right for you may not be right
-                                                    for some here is the story of a man named Brady who was busy with
-                                                    three right for you may not be right.</p> <span
-                                                        class="review-rating">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="far fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </span>
-                                            </div>
-                                        </div>
+                                    </div>
+                                    @endforeach
                                     </div>
                                     @auth
                                         <div class="post-comments mt-5 pos-r">

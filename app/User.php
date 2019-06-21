@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Controllers\adminUserProfileController;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\DB;
@@ -39,5 +40,10 @@ class User extends Authenticatable
     public function UserProfile ()
     {
        return  $this->belongsTo (AdminUserProfile::class , 'user_id');
+    }
+
+    public function Comments ()
+    {
+        return $this->belongsTo (Comment::class,'user_id');
     }
 }

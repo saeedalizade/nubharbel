@@ -27,4 +27,9 @@ class Product extends Model
 
         return $this->hasMany(PicProduct::class,'product_id', 'id');
     }
+
+    public function UserProfile ()
+    {
+        return  $this->belongsTo (AdminUserProfile::class , 'user_id')->with('user');
+    }
 }

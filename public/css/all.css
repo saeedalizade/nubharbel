@@ -4116,3 +4116,8 @@ blockquote {line-height: 25px; margin-left: 10px; padding: 20px;}
 {
     color: #f30000;
 }
+
+.img-comment-with-100
+{
+    width: 100px;
+}
